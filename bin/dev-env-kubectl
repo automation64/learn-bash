@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+# template-env: 1.2.0
+#######################################
+# Copyright SerDigital64 - https://github.com/serdigital64
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#######################################
+
+#
+# Module variables
+#
+# * Shared internal variables for module tasks
+#
+
+# shellcheck disable=SC2154
+{
+  # Env / KubeCtl / Module environment definition version
+  export DEV_ENV_KUBECTL_ID='kubectl'
+  export DEV_ENV_KUBECTL_VERSION='1.1.0'
+
+  # Lib / KubeCtl / Installer
+  export DEV_LIB_KUBECTL_INSTALLER="${DEV_LIB_INSTALLER64_TARGET}/install-kubectl"
+  # Lib / KubeCtl / Skip installation?
+  export DEV_LIB_KUBECTL_SKIP='YES'
+  # Lib / KubeCtl / Target
+  export DEV_LIB_KUBECTL_TARGET="${DEV_PATH_LIB}/${DEV_ENV_KUBECTL_ID}"
+  # Lib / KubeCtl / Minimum BashLib64 Version
+  export DEV_LIB_KUBECTL_REQUIRED_BASHLIB64='23.1.0'
+}
+
+#
+# Module parameters
+#
+# * Use .dev.env file to override values
+#
+
+# shellcheck disable=SC2154
+{
+  # Env / KubeCtl / Custom Kube Config (optional)
+  export DEV_ENV_KUBECTL_PATH_KUBECONF="${DEV_ENV_KUBECTL_PATH_KUBECONF:-${HOME}/.kube/config}"
+}
+
+#
+# Locals
+#
+# * Use .local.env file or CICD variables to override values
+#
+
+# shellcheck disable=SC2154
+{
+  # Lib / KubeCtl / Command
+  export DEV_LIB_KUBECTL_BIN="${DEV_LIB_KUBECTL_BIN:-}"
+  if [[ -z "$DEV_LIB_KUBECTL_BIN" ]]; then
+    DEV_LIB_KUBECTL_BIN="$(dev_bin64_lib_locate 'kubectl')"
+    if [[ -z "$DEV_LIB_KUBECTL_BIN" ]]; then
+      DEV_LIB_KUBECTL_BIN="${DEV_LIB_KUBECTL_TARGET}/kubectl"
+      if [[ ! -x "${DEV_LIB_KUBECTL_BIN}" ]]; then
+        DEV_LIB_KUBECTL_SKIP='NO'
+      fi
+    else
+      DEV_LIB_KUBECTL_TARGET="$(dev_bin64_lib_basename "$DEV_LIB_KUBECTL_BIN")"
+    fi
+  fi
+}
