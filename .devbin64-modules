@@ -10,7 +10,6 @@ gitleaks
 hadolint
 helm
 iac64
-kind
 kubectl
 kubelinter
 kubescape
@@ -21,3 +20,4 @@ shellcheck
 testmansh
 tflint
 tfsec
+yamllint
