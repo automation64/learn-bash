@@ -1,0 +1,26 @@
+#
+# ShellCheck / Configuration
+#
+# * Version: 1.0.0
+# * Template: 1.0.0
+#
+
+external-sources=true
+# Warning: temporary fix to avoid memory bug in 0.9 series
+extended-analysis=false
+
+#
+# Optional checks
+#
+
+enable=add-default-case
+enable=avoid-nullary-conditions
+enable=check-unassigned-uppercase
+enable=deprecate-which
+
+#
+# Project settings
+#
+
+# Relax rules to implement code examples
+disable=SC1091,SC2154,SC2034,SC2249,SC2221,SC2222,SC2206,SC2051,SC2086

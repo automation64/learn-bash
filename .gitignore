@@ -1,7 +1,7 @@
 #
 # GIT Ignore
 #
-# * Version: 1.0.0
+# * Version: 1.1.0
 # * Template: 2.0.1
 #
 
@@ -23,8 +23,9 @@
 # Project specific exclusions
 #
 
-# IAC64 / Staging
+# IAC64 / Runtime
 /var/prof/*/*/otf/
+/var/prof/*/*/ans/
 
 # Keep placeholder for empty directories
 !/**/.gitkeep

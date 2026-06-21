@@ -1,12 +1,12 @@
-# iac64-bash-reference
+# learn-bash
 
-![License](https://img.shields.io/github/license/automation64/iac64-bash-reference)
-![GitHub stars](https://img.shields.io/github/stars/automation64/iac64-bash-reference?style=social)
-![GitHub forks](https://img.shields.io/github/forks/automation64/iac64-bash-reference?style=social)
+![License](https://img.shields.io/github/license/automation64/learn-bash)
+![GitHub stars](https://img.shields.io/github/stars/automation64/learn-bash?style=social)
+![GitHub forks](https://img.shields.io/github/forks/automation64/learn-bash?style=social)
 
 ---
 
-- [iac64-bash-reference](#iac64-bash-reference)
+- [learn-bash](#learn-bash)
   - [📌 Overview](#-overview)
   - [🛠 Contributing](#-contributing)
   - [⚠️ Disclaimer](#️-disclaimer)
@@ -17,12 +17,12 @@
 
 ## 📌 Overview
 
-Bash language reference:
+Learning material for Bash:
 
-- Working examples
-- Key language components
-- Key test cases
-- Anti-examples
+- Working examples:
+  - Key language components
+  - Key test cases
+  - Anti-examples
 
 ---
 
@@ -30,7 +30,7 @@ Bash language reference:
 
 Contributions are welcome! Help us improve by submitting issues, feature requests, or pull requests.
 
-- [Code of Conduct](https://github.com/automation64/iac64-bash-reference/blob/main/CODE_OF_CONDUCT.md)
+- [Code of Conduct](https://github.com/automation64/learn-bash/blob/main/CODE_OF_CONDUCT.md)
 
 ---
 
@@ -42,7 +42,7 @@ This repository is provided "as is" without any warranties. The author is not re
 
 ## 📜 License
 
-**iac64-bash-reference** is licensed under the [Apache-2.0 License](https://www.apache.org/licenses/LICENSE-2.0.txt).
+**learn-bash** is licensed under the [Apache-2.0 License](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 ---
 
